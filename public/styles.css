@@ -1,0 +1,26 @@
+/* Reset */
+*,
+*::before,
+*::after {
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+  /* Colors */
+--color-primary: #606c38;
+--color-primary-dark: #283618;
+--color-body: #fefae0;
+--color-secondary: #dda15e;
+--color-secondary-dark: #606c38;
+}
+
+body {
+  background-color: var(--color-body);
+}
+
+navbar {
+  background-color: var(--color-primary-dark);
+}
