@@ -8,19 +8,46 @@
 }
 
 :root {
-  font-size: 62.5%;
   /* Colors */
 --color-primary: #606c38;
 --color-primary-dark: #283618;
 --color-body: #fefae0;
 --color-secondary: #dda15e;
---color-secondary-dark: #606c38;
+--color-secondary-dark: #bc6c25;
 }
 
 body {
   background-color: var(--color-body);
 }
 
-navbar {
+#mainNavbar {
   background-color: var(--color-primary-dark);
+  color: white;
 }
+
+#searchBtn {
+  background-color: #606c38;
+  color: white;
+}
+
+.sampleMain {
+  margin-top: 50px;
+  height: 90vh;
+}
+
+/*  FOOTER STYLING */
+footer {
+  background-color: var(--color-primary-dark);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+footer i {
+  font-size: 1.4rem;
+}
+
+@media (max-width: 960px) {
+  .footerContainer {
+    flex-direction: column;
+  }
