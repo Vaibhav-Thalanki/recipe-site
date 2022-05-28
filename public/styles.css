@@ -10,10 +10,14 @@
 :root {
   /* Colors */
 --color-primary: #606c38;
+--color-primary-m: hsla(74, 32%, 32%, 0.6); /* m for modified */
 --color-primary-dark: #283618;
 --color-body: #fefae0;
 --color-secondary: #dda15e;
 --color-secondary-dark: #bc6c25;
+
+/* link of image */
+--image-bbq:
 }
 
 body {
@@ -21,23 +25,59 @@ body {
 }
 
 #mainNavbar {
-  background-color: var(--color-primary-dark);
+  background-color: var(--color-primary);
+  box-shadow: 0px 3px 5px 1px grey;
   color: white;
 }
 
 #searchBtn {
-  background-color: #606c38;
+  background-color: var(--color-primary);
   color: white;
 }
+/* HEADER STYLING */
 
-.sampleMain {
-  margin-top: 50px;
-  height: 90vh;
+header {
+  margin-top: 80px;
+  padding: 1rem 3rem;
+}
+
+#mostPopular {
+  border: 1px solid var(--color-primary-m);
+}
+
+#mostPopular h2 {
+  margin-top: 0;
+  color: var(--color-primary-dark);
+}
+
+.pop-list {
+  margin-top: 0;
+  display: flex;
+}
+
+#browse {
+  display: inline-block;
+  pointer: cursor;
+  text-decoration: none;
+}
+
+#browse h3 {
+  color: white;
+  padding: 15px 0 0;
+}
+
+#browse i {
+  font-size: 1rem;
+  padding-left: 0.5rem;
+}
+
+#browse:hover h3 {
+  color: #f3ce13;
 }
 
 /*  FOOTER STYLING */
 footer {
-  background-color: var(--color-primary-dark);
+  background-color: var(--color-primary);
   color: white;
   font-size: 0.7rem;
   font-weight: 600;
