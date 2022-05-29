@@ -41,8 +41,43 @@ header {
   padding: 1rem 3rem;
 }
 
+#headerInner {
+  display: grid;
+  grid-template-columns: 3fr minmax(0, 1fr);
+  grid-gap: 3%;
+}
+
+/* ----- Carousel items 1 -----------------*/
+#bbq {
+  background: var(--color-body);
+  background: linear-gradient(0deg, var(--color-body) 0%, rgba(255,255,255,0.2) 20%,
+  rgba(255,255,255,0) 30%), url('https://images.unsplash.com/photo-1561626423-a51b45aef0a1');
+  width: 100%;
+  height: 90vh;
+  background-size: cover;
+}
+/* ----- Carousel items 2 ----------------*/
+#pasta {
+  background: var(--color-body);
+  background: linear-gradient(0deg, var(--color-body) 0%, rgba(255,255,255,0.2) 20%,
+  rgba(255,255,255,0) 30%), url('https://images.unsplash.com/photo-1473093295043-cdd812d0e601');
+  width: 100%;
+  height: 90vh;
+  background-size: cover;
+}
+/* ----- Carousel items 3 ---------------*/
+#fish {
+  background: var(--color-body);
+  background: linear-gradient(0deg, var(--color-body) 0%, rgba(255,255,255,0.2) 20%,
+  rgba(255,255,255,0) 30%), url('https://images.unsplash.com/photo-1432139555190-58524dae6a55');
+  width: 100%;
+  height: 90vh;
+  background-size: cover;
+}
+/* -----------POPULAR lists ------------- */
 #mostPopular {
   border: 1px solid var(--color-primary-m);
+  margin-right: 0;
 }
 
 #mostPopular h2 {
@@ -50,29 +85,42 @@ header {
   color: var(--color-primary-dark);
 }
 
-.pop-list {
-  margin-top: 0;
-  display: flex;
-}
-
-#browse {
-  display: inline-block;
-  pointer: cursor;
+.mostPopular-list a {
   text-decoration: none;
+  color: var(--color-primary-dark);
 }
 
-#browse h3 {
-  color: white;
-  padding: 15px 0 0;
-}
-
-#browse i {
+.mostPopular-list h5 {
   font-size: 1rem;
-  padding-left: 0.5rem;
 }
 
-#browse:hover h3 {
-  color: #f3ce13;
+/* api section */
+section#api {
+  background-color: var(--color-secondary-dark);
+  height: 400px;
+}
+
+/* cards section */
+section#cards {
+  color: white;
+}
+
+.cardsList {
+  background-color: var(--color-primary-dark);
+  border-radius: 5px;
+  padding: 15px;
+  height: 270px;
+}
+
+.cardImg {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--color-body);
+}
+
+.cardsList a {
+  text-decoration: none;
 }
 
 /*  FOOTER STYLING */
@@ -91,3 +139,18 @@ footer i {
   .footerContainer {
     flex-direction: column;
   }
+  #headerInner {
+    grid-template-columns: auto;
+  }
+  .mostPopular-inner {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 3px;
+    }
+}
+
+@media (max-width: 720px) {
+  #mostPopular {
+      display: none;
+    }
+}
