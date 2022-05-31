@@ -9,15 +9,14 @@
 
 :root {
   /* Colors */
---color-primary: #606c38;
---color-primary-m: hsla(74, 32%, 32%, 0.6); /* m for modified */
---color-primary-dark: #283618;
---color-body: #fefae0;
+
+--color-primary: #4c956c;
+--color-primary-m: hsla(146, 32%, 44%, 0.7); /* m for modified */
+--color-primary-dark: #2c6e49;
+--color-body: #fefee3;
 --color-secondary: #dda15e;
 --color-secondary-dark: #bc6c25;
-
-/* link of image */
---image-bbq:
+--color-tertiary: #ffc9b9;
 }
 
 body {
@@ -26,13 +25,24 @@ body {
 
 #mainNavbar {
   background-color: var(--color-primary);
-  box-shadow: 0px 3px 5px 1px grey;
+  box-shadow: 0px 3px 5px 1px var(--color-primary-dark);
   color: white;
 }
 
-#searchBtn {
-  background-color: var(--color-primary);
+#subBtn {
   color: white;
+  font-size: 1.1rem;
+  background-color: var(--color-primary-dark);
+}
+
+#searchForm {
+  border-left: 1px solid var(--color-primary-dark);
+}
+
+#searchBtn {
+  color: white;
+  background-color: var(--color-primary-dark);
+  font-size: 1.1rem;
 }
 /* HEADER STYLING */
 
@@ -46,6 +56,8 @@ header {
   grid-template-columns: 3fr minmax(0, 1fr);
   grid-gap: 3%;
 }
+/*  The carousel items should be edited so it wouldnt be redundant. In the future,
+I will find a better way, maybe by using JS. */
 
 /* ----- Carousel items 1 -----------------*/
 #bbq {
@@ -96,20 +108,69 @@ header {
 
 /* api section */
 section#api {
-  background-color: var(--color-secondary-dark);
+  background-color: var(--color-tertiary);
   height: 400px;
 }
 
 /* cards section */
 section#cards {
-  color: white;
+  color: var(--color-primary-dark);
 }
 
-.cardsList {
-  background-color: var(--color-primary-dark);
-  border-radius: 5px;
-  padding: 15px;
-  height: 270px;
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 14rem);
+  grid-gap: 1rem;
+  place-content: center;
+}
+
+.indCards {
+width: 13rem;
+height: 20rem;
+position: relative;
+}
+
+.cardsList-front,
+.cardsList-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: all 2s ease-in-out;
+  backface-visibility: hidden;
+  /* transform: perspective(100rem); */
+  display: grid;
+  justify-content: center;
+  align-items: start;
+  border-radius: 10px;
+}
+
+/* ------------- transition code for cards ----------------- */
+/* 1 turn = 360deg and 0.5turn = 180deg */
+.cardsList-back {
+  transform: perspective(100rem) rotateY(0.5turn);
+}
+
+.indCards:hover .cardsList-front {
+  transform: perspective(100rem) rotateY(0.5turn);
+}
+
+.indCards:hover .cardsList-back {
+  transform: perspective(100rem) rotateY(1turn);
+}
+/* --------end of transition ----------- */
+
+.cardsList-front {
+  background-color: var(--color-secondary-dark);
+  color: white;
+  padding: 1rem;
+}
+
+.cardsList-back {
+  background-color: var(--color-secondary);
+  overflow: hidden;
+  color: white;
 }
 
 .cardImg {
@@ -119,8 +180,24 @@ section#cards {
   background-color: var(--color-body);
 }
 
-.cardsList a {
+.cardImg img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.cardImg-back {
+  height: 15rem;
+}
+
+.cardsList-front a {
   text-decoration: none;
+  color: var(--color-body);
+}
+
+.cardsList-front a:hover {
+  color: white;
+  text-decoration: underline;
 }
 
 /*  FOOTER STYLING */

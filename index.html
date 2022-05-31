@@ -15,13 +15,13 @@
 
 <body>
   <!-------------- NAV BAR -------------------->
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNavbar">
-    <div class="container-fluid">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top py-0" id="mainNavbar">
+    <div class="container-fluid px-4">
+      <button class="navbar-toggler m-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerMenu" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <a class="navbar-brand" href="#">Yummy Recipes</a>
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+      <div class="collapse navbar-collapse" id="navbarTogglerMenu">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#">Home</a>
@@ -36,9 +36,12 @@
             <a class="nav-link" href="#">Dinner</a>
           </li>
         </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-sm" type="submit" id="searchBtn">Search</button>
+        <button type="button" name="subscribe" class="btn mx-2" id="subBtn">
+          <i class="fa-solid fa-circle-user px-2"></i>Subscribe
+        </button>
+        <form class="d-flex p-2" id="searchForm">
+          <input class="form-control me-2" type="search" placeholder="Search Recipe" aria-label="Search">
+          <button class="btn btn-sm py-1" type="submit" id="searchBtn">Search</button>
         </form>
       </div>
     </div>
@@ -49,180 +52,239 @@
   <header class="container-fluid px-5">
     <div id="headerInner">
       <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <div class="pb-3" id="bbq">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="pb-3" id="bbq">
               <!-- <img src="https://images.unsplash.com/photo-1561626423-a51b45aef0a1" class="img-fluid d-block w-100" alt="..."> -->
-              </div>
-              <br>
-              <h2>Our 15 Best BBQ Chicken Recipes of All Time</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                 nisi ut aliquip ex ea commodo consequat.</p>
             </div>
-            <div class="carousel-item">
-              <div class="pb-3" id="pasta">
-              <!-- <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601" class="img-fluid d-block w-100" alt="..."> -->
-              </div>
-              <br>
-              <h2>Easy Pasta Recipes in 30 minutes</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                 nisi ut aliquip ex ea commodo consequat.</p>
-            </div>
-            <div class="carousel-item">
-              <div class="pb-3" id="fish">
-              <!-- <img src="https://images.unsplash.com/photo-1432139555190-58524dae6a55" class="img-fluid d-block w-100" alt="..."> -->
-              </div>
-              <br>
-              <h2>Our 15 Best BBQ Chicken Recipes of All Time</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                 nisi ut aliquip ex ea commodo consequat.</p>
-            </div>
+            <br>
+            <h2>Our 15 Best BBQ Chicken Recipes of All Time</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.</p>
           </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
+          <div class="carousel-item">
+            <div class="pb-3" id="pasta">
+              <!-- <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601" class="img-fluid d-block w-100" alt="..."> -->
+            </div>
+            <br>
+            <h2>Easy Pasta Recipes in 30 minutes</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.</p>
+          </div>
+          <div class="carousel-item">
+            <div class="pb-3" id="fish">
+              <!-- <img src="https://images.unsplash.com/photo-1432139555190-58524dae6a55" class="img-fluid d-block w-100" alt="..."> -->
+            </div>
+            <br>
+            <h2>Our 15 Best BBQ Chicken Recipes of All Time</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.</p>
+          </div>
         </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
 
       <div class="p-3" id="mostPopular">
-        <h2 class="pb-4">Most Popular</h2>
+        <h2 class="pb-4 text-decoration-underline">Most Popular</h2>
         <div class="mostPopular-inner">
-        <div class="row align-items-top pb-4 mostPopular-list">
-          <a href="#" class="col-lg-6">
-          <img src="https://images.unsplash.com/photo-1561626423-a51b45aef0a1" class="img-fluid" alt="">
-          </a>
-          <a href="#" class="col-6"><h5>8 Recipes for Homemade Baked Beans</h5></a>
+          <div class="row align-items-top pb-4 mostPopular-list">
+            <a href="#" class="col-lg-6">
+              <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601" class="img-fluid" alt="">
+            </a>
+            <a href="#" class="col-6">
+              <h5>8 Recipes for Homemade Baked Beans</h5>
+            </a>
+          </div>
+          <div class="row align-items-top pb-4 mostPopular-list">
+            <a href="#" class="col-lg-6">
+              <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601" class="img-fluid" alt="">
+            </a>
+            <a href="#" class="col-6">
+              <h5>Sangria Recipes</h5>
+            </a>
+          </div>
+          <div class="row align-items-top pb-4 mostPopular-list">
+            <a href="#" class="col-lg-6">
+              <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601" class="img-fluid" alt="">
+            </a>
+            <a href="#" class="col-6">
+              <h5>Sangria Recipes</h5>
+            </a>
+          </div>
+          <div class="row align-items-top pb-4 mostPopular-list">
+            <a href="#" class="col-lg-6">
+              <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601" class="img-fluid" alt="">
+            </a>
+            <a href="#" class="col-6">
+              <h5>Sangria Recipes</h5>
+            </a>
+          </div>
+          <div class="row align-items-top mostPopular-list">
+            <a href="#" class="col-lg-6">
+              <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601" class="img-fluid" alt="">
+            </a>
+            <a href="#" class="col-6">
+              <h5>8 Recipes for Homemade Baked Beans</h5>
+            </a>
+          </div>
         </div>
-        <div class="row align-items-top pb-4 mostPopular-list">
-          <a href="#" class="col-lg-6">
-          <img src="https://images.unsplash.com/photo-1561626423-a51b45aef0a1" class="img-fluid" alt="">
-          </a>
-          <a href="#" class="col-6"><h5>Sangria Recipes</h5></a>
-        </div>
-        <div class="row align-items-top pb-4 mostPopular-list">
-          <a href="#" class="col-lg-6">
-          <img src="https://images.unsplash.com/photo-1561626423-a51b45aef0a1" class="img-fluid" alt="">
-          </a>
-          <a href="#" class="col-6"><h5>Sangria Recipes</h5></a>
-        </div>
-        <div class="row align-items-top pb-4 mostPopular-list">
-          <a href="#" class="col-lg-6">
-          <img src="https://images.unsplash.com/photo-1561626423-a51b45aef0a1" class="img-fluid" alt="">
-          </a>
-          <a href="#" class="col-6"><h5>Sangria Recipes</h5></a>
-        </div>
-        <div class="row align-items-top mostPopular-list">
-          <a href="#" class="col-lg-6">
-          <img src="https://images.unsplash.com/photo-1561626423-a51b45aef0a1" class="img-fluid" alt="">
-          </a>
-          <a href="#" class="col-6"><h5>8 Recipes for Homemade Baked Beans</h5></a>
-        </div>
-      </div>
       </div>
     </div>
-    </header>
+  </header>
 
   <!--------------------------- API section -------------------------->
-  <section id="api">
+  <section class="container-fluid p-5" id="api">
+    <div class="">
+      <h2>Get Cooking!</h2>
+    </div>
 
   </section>
   <!--------------------------- Card section -------------------------->
-  <section class="container-fluid py-5" id="cards">
-    <div class="row gx-5">
-      <div class="col-1">
-      </div>
-      <div class="col-2 px-3">
-        <div class="cardsList">
+  <section class="container-fluid p-5" id="cards">
+    <div class="px-4">
+      <h2>Testimonials</h2>
+    </div>
+    <div class="cards-container mt-5 px-4">
+      <div class="indCards">
+        <!-- Front card -->
+        <div class="cardsList-front">
           <h5><a href="#">Link to Recipe</a></h5>
 
           <div class="card-msg py-2">
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-               sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
           </div>
           <div class="d-flex align-items-end justify-content-end">
             <div class="cardImg">
-            <img src="" alt="">
+              <img src="public/female.png" alt="">
             </div>
             <h5 class="px-2">Author</h5>
           </div>
         </div>
+        <!-- Back card -->
+        <div class="cardsList-back">
+          <div class="cardImg-back">
+          <img src="https://images.unsplash.com/photo-1565299507177-b0ac66763828" class="img-fluid" alt="">
+          </div>
+          <h5>Recipe Name</h5>
+          <span class="rating"></span>
+        </div>
       </div>
-      <div class="col-2 px-3">
-        <div class="cardsList">
+      <div class="indCards">
+        <!-- Front card -->
+        <div class="cardsList-front">
           <h5><a href="#">Link to Recipe</a></h5>
 
           <div class="card-msg py-2">
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-               sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
           </div>
           <div class="d-flex align-items-end justify-content-end">
             <div class="cardImg">
-            <img src="" alt="">
+              <img src="public/female.png" alt="">
             </div>
             <h5 class="px-2">Author</h5>
           </div>
         </div>
+        <!-- Back card -->
+        <div class="cardsList-back">
+          <div class="cardImg-back">
+          <img src="https://images.unsplash.com/photo-1565299507177-b0ac66763828" class="img-fluid" alt="">
+          </div>
+          <h5>Recipe Name</h5>
+          <span class="rating"></span>
+        </div>
       </div>
-      <div class="col-2 px-3">
-        <div class="cardsList">
+      <div class="indCards">
+        <!-- Front card -->
+        <div class="cardsList-front">
           <h5><a href="#">Link to Recipe</a></h5>
 
           <div class="card-msg py-2">
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-               sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
           </div>
           <div class="d-flex align-items-end justify-content-end">
             <div class="cardImg">
-            <img src="" alt="">
+              <img src="public/female.png" alt="">
             </div>
             <h5 class="px-2">Author</h5>
           </div>
         </div>
+        <!-- Back card -->
+        <div class="cardsList-back">
+          <div class="cardImg-back">
+          <img src="https://images.unsplash.com/photo-1565299507177-b0ac66763828" class="img-fluid" alt="">
+          </div>
+          <h5>Recipe Name</h5>
+          <span class="rating"></span>
+        </div>
       </div>
-      <div class="col-2 px-3">
-        <div class="cardsList">
+      <div class="indCards">
+        <!-- Front card -->
+        <div class="cardsList-front">
           <h5><a href="#">Link to Recipe</a></h5>
 
           <div class="card-msg py-2">
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-               sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
           </div>
           <div class="d-flex align-items-end justify-content-end">
             <div class="cardImg">
-            <img src="" alt="">
+              <img src="public/female.png" alt="">
             </div>
             <h5 class="px-2">Author</h5>
           </div>
         </div>
+        <!-- Back card -->
+        <div class="cardsList-back">
+          <div class="cardImg-back">
+            <img src="https://images.unsplash.com/photo-1565299507177-b0ac66763828" class="img-fluid" alt="">
+          </div>
+          <h5>Recipe Name</h5>
+          <span class="rating"></span>
+        </div>
       </div>
-      <div class="col-2 px-3">
-        <div class="cardsList">
+      <div class="indCards">
+        <!-- Front card -->
+        <div class="cardsList-front">
           <h5><a href="#">Link to Recipe</a></h5>
 
           <div class="card-msg py-2">
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-               sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
           </div>
           <div class="d-flex align-items-end justify-content-end">
             <div class="cardImg">
-            <img src="" alt="">
+              <img src="public/female.png" alt="">
             </div>
             <h5 class="px-2">Author</h5>
           </div>
         </div>
+        <!-- Back card -->
+        <div class="cardsList-back">
+          <div class="cardImg-back">
+          <img src="https://images.unsplash.com/photo-1565299507177-b0ac66763828" class="img-fluid"alt="">
+          </div>
+          <h5>Recipe Name</h5>
+          <span class="rating"></span>
+        </div>
       </div>
-      <div class="col-1">
-      </div>
+    </div>
+    </div>
     </div>
     <div class="row">
 
@@ -236,12 +298,12 @@
         <p class="px-3">&copy 2022 YUMMY RECIPES ENTERPRISES</p>
       </div>
       <div class="footerItems">
-      <ul class="list-inline">
-        <li class="list-inline-item px-3 m-0">TERMS OF USE</li>
-        <li class="list-inline-item px-3 m-0">PRIVACY POLICY</li>
-        <li class="list-inline-item px-3 m-0">COOKIES</li>
-        <li class="list-inline-item px-3 m-0">CONTACT</li>
-      </ul>
+        <ul class="list-inline">
+          <li class="list-inline-item px-3 m-0">TERMS OF USE</li>
+          <li class="list-inline-item px-3 m-0">PRIVACY POLICY</li>
+          <li class="list-inline-item px-3 m-0">COOKIES</li>
+          <li class="list-inline-item px-3 m-0">CONTACT</li>
+        </ul>
       </div>
       <div class="footerItems">
         <ul class="list-inline">
