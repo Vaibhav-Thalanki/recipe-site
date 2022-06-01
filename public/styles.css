@@ -109,7 +109,33 @@ I will find a better way, maybe by using JS. */
 /* api section */
 section#api {
   background-color: var(--color-tertiary);
-  height: 400px;
+
+}
+#foodsearch{
+  border: none;
+  border-radius: 10px;
+  margin-right: 10px;
+  size: 50;
+  padding: 5px;
+}
+.apitile{
+  margin-bottom: 10px;
+}
+#apisearchdiv{
+  text-align: center;
+}
+@media (max-width:768px) {
+  #apisearchdiv{
+    text-align: left;
+  }
+}
+.renderedIngredients{
+  display: flex;
+  align-items: center;
+}
+.recipeLink{
+  width: 30%;
+  margin-top: 15px;
 }
 
 /* cards section */
