@@ -47,109 +47,21 @@
     </div>
   </nav>
   <!-- END OF NAVBAR -->
+  <!--------------------------- API section (Search all dishes)-------------------------->
+  <section class="container-fluid mt-5 p-5" id="apiall">
+    <div class="row" id="apisearchcards">
+      <section class="col-12  apitile">
+        <h2>Search Results</h2>
+      </section>
+      <!-- dynamically rendered through javaScript -->
 
-  <!--------------------------- HEADER using carousel -------------------------->
-  <header class="container-fluid px-5">
-    <div id="headerInner">
-      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="pb-3" id="bbq">
-              <!-- <img src="https://images.unsplash.com/photo-1561626423-a51b45aef0a1" class="img-fluid d-block w-100" alt="..."> -->
-            </div>
-            <br>
-            <h2>Our 15 Best BBQ Chicken Recipes of All Time</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.</p>
-          </div>
-          <div class="carousel-item">
-            <div class="pb-3" id="pasta">
-              <!-- <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601" class="img-fluid d-block w-100" alt="..."> -->
-            </div>
-            <br>
-            <h2>Easy Pasta Recipes in 30 minutes</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.</p>
-          </div>
-          <div class="carousel-item">
-            <div class="pb-3" id="fish">
-              <!-- <img src="https://images.unsplash.com/photo-1432139555190-58524dae6a55" class="img-fluid d-block w-100" alt="..."> -->
-            </div>
-            <br>
-            <h2>Our 15 Best BBQ Chicken Recipes of All Time</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.</p>
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-
-      <div class="p-3" id="mostPopular">
-        <h2 class="pb-4 text-decoration-underline">Most Popular</h2>
-        <div class="mostPopular-inner">
-          <div class="row align-items-top pb-4 mostPopular-list">
-            <a href="#" class="col-lg-6">
-              <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601" class="img-fluid" alt="">
-            </a>
-            <a href="#" class="col-6">
-              <h5>8 Recipes for Homemade Baked Beans</h5>
-            </a>
-          </div>
-          <div class="row align-items-top pb-4 mostPopular-list">
-            <a href="#" class="col-lg-6">
-              <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601" class="img-fluid" alt="">
-            </a>
-            <a href="#" class="col-6">
-              <h5>Sangria Recipes</h5>
-            </a>
-          </div>
-          <div class="row align-items-top pb-4 mostPopular-list">
-            <a href="#" class="col-lg-6">
-              <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601" class="img-fluid" alt="">
-            </a>
-            <a href="#" class="col-6">
-              <h5>Sangria Recipes</h5>
-            </a>
-          </div>
-          <div class="row align-items-top pb-4 mostPopular-list">
-            <a href="#" class="col-lg-6">
-              <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601" class="img-fluid" alt="">
-            </a>
-            <a href="#" class="col-6">
-              <h5>Sangria Recipes</h5>
-            </a>
-          </div>
-          <div class="row align-items-top mostPopular-list">
-            <a href="#" class="col-lg-6">
-              <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601" class="img-fluid" alt="">
-            </a>
-            <a href="#" class="col-6">
-              <h5>8 Recipes for Homemade Baked Beans</h5>
-            </a>
-          </div>
-        </div>
-      </div>
     </div>
-  </header>
-
+  </section>
   <!--------------------------- API section (Favourites)-------------------------->
-  <section class="container-fluid p-5" id="api">
+  <section class="container-fluid p-5 mt-5" id="api">
     <div class="row">
       <section class="col-12 col-md-6 apitile">
-        <h2>Favourites!</h2>
+        <h2>Favourites</h2>
       </section>
       <section class="col-12 col-md-6 apitile" id="apisearchdiv">
         <input type="text" name="food" placeholder="Search for burger..." id="foodsearch">
