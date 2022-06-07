@@ -14,6 +14,8 @@ $(document).ready(() => {
       renderforsearch(data, false, 1);
       localStorage.removeItem("InitialSearchFood");
       localStorage.removeItem("InitialSearchFoodJSON");
+      // -----------------------
+      addFavourite(data);
     }
   })(window);
 });
@@ -41,6 +43,7 @@ $("#tile-1").click(() => {
 // API request to fetch for favorites as well as search section
 const sendAPIreq = async (food, start, val) => {
   if (start == true) {
+    searchedFoodItems = [];
     document.getElementById("apicards").innerHTML = "";
   }
   let response = await fetch(
@@ -64,7 +67,9 @@ const sendAPIreq = async (food, start, val) => {
   if (val == 0) render(data); //for favourites
   else if (val == 1) {
     renderforsearch(data);
-  } else {
+    // ----------------------------
+    addFavourite(data);
+  } else if (val == 2) {
     localStorage.setItem("InitialSearchFoodJSON", JSON.stringify(data));
   }
 };
@@ -151,7 +156,30 @@ const renderforsearch = (data) => {
   }
   document.getElementById("apisearchcards").innerHTML = html;
 };
-//add to favourites
-$(".addFavo").click((event) => {
-  console.log("brhu");
-});
+
+// ' add to favourites ' functionality
+let addFavourite = (data) => {
+  //using event delegation to add event listeners to dynamically rendered contact
+  $(document).on("click", "div.addFavo", function (e) {
+    let element = e.currentTarget;
+    let id = element.id;
+    console.log(element);
+    console.log(id);
+    let number = id.charAt(id.length - 1);
+    let name = data.hits[number].recipe.label;
+    console.log(name);
+    console.log(number);
+    let flag = 0;
+    for (let i = 0; i < searchedFoodItems.length; i++) {
+      if (searchedFoodItems[i] == name) {
+        flag = 1;
+        break;
+      }
+    }
+    if (flag != 1) {
+      sendAPIreq(name, start, 0);
+      if (start == true) start = false;
+      searchedFoodItems.push(name);
+    }
+  });
+};
