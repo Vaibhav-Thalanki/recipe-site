@@ -2,9 +2,19 @@
 
 //auto load pizza and chicken in favourites
 $(document).ready(() => {
-  ((global) => {
+  (async (global) => {
     sendAPIreq("pizza", false, 0);
     sendAPIreq("chicken", false, 0);
+    if (
+      localStorage.getItem("InitialSearchFood") &&
+      window.location.href.includes("searchPage.html")
+    ) {
+      await sendAPIreq(localStorage.getItem("InitialSearchFood"), false, 2);
+      let data = JSON.parse(localStorage.getItem("InitialSearchFoodJSON"));
+      renderforsearch(data, false, 1);
+      localStorage.removeItem("InitialSearchFood");
+      localStorage.removeItem("InitialSearchFoodJSON");
+    }
   })(window);
 });
 let APP_ID = "f9edf711";
@@ -52,8 +62,10 @@ const sendAPIreq = async (food, start, val) => {
   let data = await response.json();
   console.log(data);
   if (val == 0) render(data); //for favourites
-  else {
+  else if (val == 1) {
     renderforsearch(data);
+  } else {
+    localStorage.setItem("InitialSearchFoodJSON", JSON.stringify(data));
   }
 };
 // rendering favourites section
@@ -93,19 +105,26 @@ ${data.hits[0].recipe.ingredientLines}
 //SEARCH ALL DISHES SECTION
 
 //search button
-$("#searchBtn").click(() => {
-  document.getElementById(
-    "apisearchcards"
-  ).innerHTML = `<section class="col-12  apitile">
-  <h2>Search Results</h2>
-</section>`;
+let getsearch = (val) => {
   var food = $("#searchvalue").val();
-  sendAPIreq(food, false, 1);
+  if (val != 0) {
+    localStorage.setItem("InitialSearchFood", food);
+    location.href = "searchPage.html";
+  } else if (val == 0) {
+    sendAPIreq(food, false, 1);
+  }
+};
+$("#searchBtn").click(() => {
+  getsearch(0);
 });
 
 //rendering search section
 const renderforsearch = (data) => {
+  console.log("inside the render search: " + data);
   let html = document.getElementById("apisearchcards").innerHTML;
+  html = `<section class="col-12  apitile">
+  <h2>Search Results</h2>
+</section>`;
   let n = data.hits.length;
   for (let i = 0; i < n; i++) {
     html += `
