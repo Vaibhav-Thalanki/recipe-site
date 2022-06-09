@@ -47,62 +47,50 @@ body {
 /* HEADER STYLING */
 
 header {
-  margin-top: 80px;
+  margin-top: 70px;
   padding: 1rem 3rem;
 }
 
 #headerInner {
   display: grid;
-  grid-template-columns: 3fr minmax(0, 1fr);
+  grid-template-columns: 3fr minmax(200px, 1fr);
   grid-gap: 3%;
+}
+
+/* to set padding for all sections */
+.section-inner {
+    padding: 0 3rem;
 }
 /*  The carousel items should be edited so it wouldnt be redundant. In the future,
 I will find a better way, maybe by using JS. */
 
 /* ----- Carousel items 1 -----------------*/
-#bbq {
+/* #bbq {
   background: var(--color-body);
   background: linear-gradient(0deg, var(--color-body) 0%, rgba(255,255,255,0.2) 20%,
   rgba(255,255,255,0) 30%), url('https://images.unsplash.com/photo-1561626423-a51b45aef0a1');
   width: 100%;
   height: 90vh;
   background-size: cover;
-}
-/* ----- Carousel items 2 ----------------*/
-#pasta {
-  background: var(--color-body);
-  background: linear-gradient(0deg, var(--color-body) 0%, rgba(255,255,255,0.2) 20%,
-  rgba(255,255,255,0) 30%), url('https://images.unsplash.com/photo-1473093295043-cdd812d0e601');
-  width: 100%;
-  height: 90vh;
-  background-size: cover;
-}
-/* ----- Carousel items 3 ---------------*/
-#fish {
-  background: var(--color-body);
-  background: linear-gradient(0deg, var(--color-body) 0%, rgba(255,255,255,0.2) 20%,
-  rgba(255,255,255,0) 30%), url('https://images.unsplash.com/photo-1432139555190-58524dae6a55');
-  width: 100%;
-  height: 90vh;
-  background-size: cover;
-}
+} */
+
 /* -----------POPULAR lists ------------- */
-#mostPopular {
+.sidebar-recipes {
   border: 1px solid var(--color-primary-m);
   margin-right: 0;
 }
 
-#mostPopular h2 {
+.sidebar-recipes h2 {
   margin-top: 0;
   color: var(--color-primary-dark);
 }
 
-.mostPopular-list a {
+.sidebar-list a {
   text-decoration: none;
   color: var(--color-primary-dark);
 }
 
-.mostPopular-list h5 {
+.sidebar-list h5 {
   font-size: 1rem;
 }
 
@@ -145,13 +133,13 @@ section#cards {
 
 .cards-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, 14rem);
+  grid-template-columns: repeat(auto-fit, 12rem);
   grid-gap: 1rem;
   place-content: center;
 }
 
 .indCards {
-width: 13rem;
+width: 12rem;
 height: 20rem;
 position: relative;
 }
@@ -188,13 +176,13 @@ position: relative;
 /* --------end of transition ----------- */
 
 .cardsList-front {
-  background-color: var(--color-secondary-dark);
+  background-color: var(--color-secondary);
   color: white;
   padding: 1rem;
 }
 
 .cardsList-back {
-  background-color: var(--color-secondary);
+  background-color: var(--color-secondary-dark);
   overflow: hidden;
   color: white;
 }
@@ -226,6 +214,10 @@ position: relative;
   text-decoration: underline;
 }
 
+.card-msg {
+  font-size: 1rem;
+}
+
 /*  FOOTER STYLING */
 footer {
   background-color: var(--color-primary);
@@ -245,15 +237,19 @@ footer i {
   #headerInner {
     grid-template-columns: auto;
   }
-  .mostPopular-inner {
+  .sidebar-inner {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 3px;
     }
+  .section-inner {
+    padding: 0;
+  }
 }
 
-@media (max-width: 720px) {
-  #mostPopular {
-      display: none;
+@media (max-width: 576px) {
+  .sidebar-inner {
+      display: flex;
+      flex-direction: column;
     }
 }

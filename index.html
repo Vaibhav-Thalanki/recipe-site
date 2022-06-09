@@ -50,12 +50,12 @@
 
   <!--------------------------- HEADER using carousel -------------------------->
   <header class="container-fluid px-5">
-    <div id="headerInner">
+    <div id="headerInner" class="section-inner">
       <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <div class="pb-3" id="bbq">
-              <!-- <img src="https://images.unsplash.com/photo-1561626423-a51b45aef0a1" class="img-fluid d-block w-100" alt="..."> -->
+            <div class="carouselImages pb-3"><!-- id="bbq" -->
+              <img src="https://images.unsplash.com/photo-1561626423-a51b45aef0a1" class="img-fluid d-block h-75" alt="...">
             </div>
             <br>
             <h2>Our 15 Best BBQ Chicken Recipes of All Time</h2>
@@ -65,8 +65,8 @@
               nisi ut aliquip ex ea commodo consequat.</p>
           </div>
           <div class="carousel-item">
-            <div class="pb-3" id="pasta">
-              <!-- <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601" class="img-fluid d-block w-100" alt="..."> -->
+            <div class="carouselImages pb-3">
+              <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601" class="img-fluid d-block h-75" alt="...">
             </div>
             <br>
             <h2>Easy Pasta Recipes in 30 minutes</h2>
@@ -76,8 +76,8 @@
               nisi ut aliquip ex ea commodo consequat.</p>
           </div>
           <div class="carousel-item">
-            <div class="pb-3" id="fish">
-              <!-- <img src="https://images.unsplash.com/photo-1432139555190-58524dae6a55" class="img-fluid d-block w-100" alt="..."> -->
+            <div class="carouselImages pb-3">
+              <img src="https://images.unsplash.com/photo-1432139555190-58524dae6a55" class="img-fluid d-block h-75" alt="...">
             </div>
             <br>
             <h2>Our 15 Best BBQ Chicken Recipes of All Time</h2>
@@ -97,57 +97,41 @@
         </button>
       </div>
 
-      <div class="p-3" id="mostPopular">
+      <div class="p-3 sidebar-recipes">
         <h2 class="pb-4 text-decoration-underline">Most Popular</h2>
-        <div class="mostPopular-inner">
-          <div class="row align-items-top pb-4 mostPopular-list">
-            <a href="#" class="col-lg-6">
-              <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601" class="img-fluid" alt="">
-            </a>
-            <a href="#" class="col-6">
-              <h5>8 Recipes for Homemade Baked Beans</h5>
-            </a>
-          </div>
-          <div class="row align-items-top pb-4 mostPopular-list">
-            <a href="#" class="col-lg-6">
-              <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601" class="img-fluid" alt="">
-            </a>
-            <a href="#" class="col-6">
-              <h5>Sangria Recipes</h5>
-            </a>
-          </div>
-          <div class="row align-items-top pb-4 mostPopular-list">
-            <a href="#" class="col-lg-6">
-              <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601" class="img-fluid" alt="">
-            </a>
-            <a href="#" class="col-6">
-              <h5>Sangria Recipes</h5>
-            </a>
-          </div>
-          <div class="row align-items-top pb-4 mostPopular-list">
-            <a href="#" class="col-lg-6">
-              <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601" class="img-fluid" alt="">
-            </a>
-            <a href="#" class="col-6">
-              <h5>Sangria Recipes</h5>
-            </a>
-          </div>
-          <div class="row align-items-top mostPopular-list">
-            <a href="#" class="col-lg-6">
-              <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601" class="img-fluid" alt="">
-            </a>
-            <a href="#" class="col-6">
-              <h5>8 Recipes for Homemade Baked Beans</h5>
-            </a>
-          </div>
+        <div class="sidebar-inner">
+            <div class="pb-4 sidebar-list">
+              <a href="#" class="col-lg-6">
+                <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601" class="img-fluid" alt="">
+              </a>
+              <a href="#" class="col-6">
+                <h5>Sangria Recipes</h5>
+              </a>
+            </div>
+            <div class="pb-4 sidebar-list">
+              <a href="#" class="col-lg-6">
+                <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601" class="img-fluid" alt="">
+              </a>
+              <a href="#" class="col-6">
+                <h5>Sangria Recipes</h5>
+              </a>
+            </div>
+            <div class="sidebar-list">
+              <a href="#" class="col-lg-6">
+                <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601" class="img-fluid" alt="">
+              </a>
+              <a href="#" class="col-6">
+                <h5>Sangria Recipes</h5>
+              </a>
+            </div>
         </div>
       </div>
     </div>
   </header>
 
   <!--------------------------- API section (Favourites)-------------------------->
-  <section class="container-fluid p-5" id="api">
-    <div class="row">
+  <section class="container-fluid p-5 mt-5" id="api">
+    <div class="row section-inner">
       <section class="col-12 col-md-6 apitile">
         <h2>Favourites!</h2>
       </section>
@@ -158,17 +142,17 @@
     </div>
 
     <div id="apicards">
-    
+
       <!-- dynamically rendered through javaScript -->
     </div>
 
   </section>
   <!--------------------------- Card section -------------------------->
   <section class="container-fluid p-5" id="cards">
-    <div class="px-4">
+    <div class="section-inner">
       <h2>Testimonials</h2>
     </div>
-    <div class="cards-container mt-5 px-4">
+    <div class="cards-container mt-5 section-inner">
       <div class="indCards">
         <!-- Front card -->
         <div class="cardsList-front">
@@ -187,7 +171,7 @@
         </div>
         <!-- Back card -->
         <div class="cardsList-back">
-          <div class="cardImg-back">
+          <div class="cardImg-back h-75">
           <img src="https://images.unsplash.com/photo-1565299507177-b0ac66763828" class="img-fluid" alt="">
           </div>
           <h5>Recipe Name</h5>
@@ -212,7 +196,7 @@
         </div>
         <!-- Back card -->
         <div class="cardsList-back">
-          <div class="cardImg-back">
+          <div class="cardImg-back h-75">
           <img src="https://images.unsplash.com/photo-1565299507177-b0ac66763828" class="img-fluid" alt="">
           </div>
           <h5>Recipe Name</h5>
@@ -237,7 +221,7 @@
         </div>
         <!-- Back card -->
         <div class="cardsList-back">
-          <div class="cardImg-back">
+          <div class="cardImg-back h-75">
           <img src="https://images.unsplash.com/photo-1565299507177-b0ac66763828" class="img-fluid" alt="">
           </div>
           <h5>Recipe Name</h5>
@@ -262,7 +246,7 @@
         </div>
         <!-- Back card -->
         <div class="cardsList-back">
-          <div class="cardImg-back">
+          <div class="cardImg-back h-75">
             <img src="https://images.unsplash.com/photo-1565299507177-b0ac66763828" class="img-fluid" alt="">
           </div>
           <h5>Recipe Name</h5>
@@ -287,7 +271,32 @@
         </div>
         <!-- Back card -->
         <div class="cardsList-back">
-          <div class="cardImg-back">
+          <div class="cardImg-back h-75">
+          <img src="https://images.unsplash.com/photo-1565299507177-b0ac66763828" class="img-fluid" alt="">
+          </div>
+          <h5>Recipe Name</h5>
+          <span class="rating"></span>
+        </div>
+      </div>
+      <div class="indCards">
+        <!-- Front card -->
+        <div class="cardsList-front">
+          <h5><a href="#">Link to Recipe</a></h5>
+
+          <div class="card-msg py-2">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+          <div class="d-flex align-items-end justify-content-end">
+            <div class="cardImg">
+              <img src="public/female.png" alt="">
+            </div>
+            <h5 class="px-2">Author</h5>
+          </div>
+        </div>
+        <!-- Back card -->
+        <div class="cardsList-back">
+          <div class="cardImg-back h-75">
           <img src="https://images.unsplash.com/photo-1565299507177-b0ac66763828" class="img-fluid"alt="">
           </div>
           <h5>Recipe Name</h5>
