@@ -133,14 +133,14 @@ section#cards {
 
 .cards-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, 12rem);
-  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, 14rem);
+  grid-gap: 1.2rem;
   place-content: center;
 }
 
 .indCards {
-width: 12rem;
-height: 20rem;
+width: 14rem;
+height: 22rem;
 position: relative;
 }
 
@@ -230,7 +230,21 @@ footer i {
   font-size: 1.4rem;
 }
 
-@media (max-width: 960px) {
+@media screen and (max-width: 1048px) {
+  .sidebar-recipes h2 {
+    font-size: 1.5rem;
+  }
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+  }
+
+  .indCards {
+    justify-self: center;
+  }
+}
+
+@media screen and (max-width: 960px) {
   .footerContainer {
     flex-direction: column;
   }
@@ -247,9 +261,17 @@ footer i {
   }
 }
 
-@media (max-width: 576px) {
+@media screen and (max-width: 576px) {
   .sidebar-inner {
       display: flex;
       flex-direction: column;
-    }
+  }
+  .cards-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+  .indCards {
+    width: 20rem;
+  }
 }
