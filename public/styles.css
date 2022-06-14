@@ -1,4 +1,4 @@
-/* Reset */
+ /* Reset */
 *,
 *::before,
 *::after {
@@ -19,9 +19,10 @@
 --color-tertiary: #ffc9b9;
 }
 
-body {
-  background-color: var(--color-body);
-}
+body#mainBody {
+    background-color: var(--color-body);
+    font-family: 'Poppins', sans-serif;
+  }
 
 #mainNavbar {
   background-color: var(--color-primary);
@@ -46,15 +47,16 @@ body {
 }
 /* HEADER STYLING */
 
-header {
+#header {
   margin-top: 70px;
-  padding: 1rem 3rem;
+  background-color: var(--color-body);
 }
 
 #headerInner {
   display: grid;
   grid-template-columns: 3fr minmax(200px, 1fr);
   grid-gap: 3%;
+  background-color: var(--color-body);
 }
 
 /* to set padding for all sections */
@@ -140,7 +142,7 @@ section#cards {
 
 .indCards {
 width: 14rem;
-height: 22rem;
+height: 24rem;
 position: relative;
 }
 
@@ -191,17 +193,12 @@ position: relative;
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: var(--color-body);
 }
 
 .cardImg img {
   max-width: 100%;
   height: auto;
   object-fit: cover;
-}
-
-.cardImg-back {
-  height: 15rem;
 }
 
 .cardsList-front a {
@@ -218,6 +215,11 @@ position: relative;
   font-size: 1rem;
 }
 
+.rating {
+  font-size: 0.8rem;
+  color: #f7d507; /*yellow for the stars */
+}
+
 /*  FOOTER STYLING */
 footer {
   background-color: var(--color-primary);
@@ -230,6 +232,36 @@ footer i {
   font-size: 1.4rem;
 }
 
+/* SEARCHPAGE for popup */
+.popup-container {
+  background-color: rgba(0,0,0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.popup-container.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.popup {
+  background-color: white;
+  max-width: 600px;
+  width: 100%;
+  border-radius: 5px;
+  padding: 2rem 2rem;
+  position: relative;
+  overflow: auto;
+  max-height: 100vh;
+}
+
+/* ----- for RESPONSIVENESS ------------ */
 @media screen and (max-width: 1048px) {
   .sidebar-recipes h2 {
     font-size: 1.5rem;
