@@ -51,17 +51,36 @@
   <!-- END OF NAVBAR -->
   <!--------------------------- API section (Results for Veggies)-------------------------->
   <section class="container-fluid mt-5 p-5" id="apiall">
-      <div class="row text-center" id="apisearchcards">
+    <div class="results-container d-flex justify-content-between">
+      <div class="text-center w-75">
         <h2>Vegetarian Meals</h2>
-      <div class="row">
-        <div class="col-8" id="content">
+        <div class="row mt-5">
+          <div class="d-flex justify-content-between flex-wrap" id="content">
           <!-- dynamically rendered through javaScript -->
-        </div>
-        <div class="col-4">
-
+          </div>
         </div>
       </div>
-    </div>
+
+        <div class="sidebarView mx-3 d-flex flex-column">
+          <div class="welcome text-center p-3 mb-3">
+            <div class="circle m-auto mb-2">
+              <img src="./female.png" class="img-fluid" alt="">
+            </div>
+            <h5>Welcome to Yummy Recipes!</h5>
+            <p>We're so glad you're here.</p>
+          </div>
+
+        <div class="subscribe p-3 mb-3">
+          <h5 class="text-center">Join Thousands</h5>
+          <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <form class="" action="index.html" method="post">
+            <label for="email">Email</label>
+            <input type="email" name="" value="" placeholder="Type Email">
+            <button class="btn recipeLink">Subscribe!</button>
+          </form>
+        </div>
+      </div>
+      </div>
   </section>
   <!--------------------------- API section (Favourites)-------------------------->
   <section class="container-fluid p-5 mt-5" id="api">
@@ -81,15 +100,6 @@
     </div>
 
   </section>
-  <!--------------------------- Popup section -------------------------->
-  <div class="popup-container hidden" id="meal-popup">
-    <div class="popup" id="popup">
-      <button type="button" id="close-popup"><i class="fa fa-times"></i></button>
-      <div class="meal-info" id="meal-info">
-      <!-- data taken using JS -->
-      </div>
-    </div>
-  </div>
 
   <!--------------------------- FOOTER -------------------------->
   <footer class="container-fluid text-center py-3">

@@ -123,9 +123,13 @@ section#api {
   display: flex;
   align-items: center;
 }
-.recipeLink{
-  width: 30%;
+
+button.recipeLink {
+  min-width: 30%;
   margin-top: 15px;
+  background-color: var(--color-primary);
+  color: white;
+  box-shadow: 1px 1px 2px var(--color-primary-m);
 }
 
 /* cards section */
@@ -261,6 +265,27 @@ footer i {
   max-height: 100vh;
 }
 
+/* ----- for VEGGY PAGE -------------- */
+.sidebarView {
+  width: 25%;
+}
+
+.welcome {
+  background-color: var(--color-tertiary);
+}
+
+.circle {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  background-color: var(--color-body);
+    border: 1px solid var(--color-secondary);
+    overflow: hidden;
+}
+
+.subscribe {
+  background-color: var(--color-secondary);
+}
 /* ----- for RESPONSIVENESS ------------ */
 @media screen and (max-width: 1048px) {
   .sidebar-recipes h2 {
