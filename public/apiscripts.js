@@ -21,12 +21,12 @@ function addMeal(mealData, random= false){
   meal.classList.add('meal');
 
   meal.innerHTML =`
-  <div class="card" style="width: 18rem;">
+  <div class="card mb-3" style="width: 18rem;">
   <img src="${mealData.recipe.image}" class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title">${mealData.recipe.label}</h5>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <button class="btn recipeLink mt-4><a href="${mealData.recipe.url}">Get recipe!</a></button>
+    <button class="btn btn-success mt-4><a href="${mealData.recipe.url}">Get recipe!</a></button>
   </div>
 </div>`;
 
