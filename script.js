@@ -100,7 +100,8 @@ const render = (data) => {
 <div class='card container-fluid p-5'>
 <h5>Ingredients</h5>
 ${data.hits[0].recipe.ingredientLines}
-<a href='${data.hits[0].recipe.url}' target='_blank' class='btn btn-primary recipeLink'>Get Recipe!</a>
+<a href='${data.hits[0].recipe.url}' target='_blank' class='btn btn-success
+ recipeLink'>Get Recipe!</a>
 </div>
 </div>
 </div>
@@ -128,7 +129,7 @@ const renderforsearch = (data) => {
   console.log("inside the render search: " + data);
   let html = document.getElementById("apisearchcards").innerHTML;
   html = `<section class="col-12  apitile">
-  <h2>Search Results</h2>
+  <h2 class="title-highlight">Search Results</h2>
 </section>`;
   let n = data.hits.length;
   for (let i = 0; i < n; i++) {
@@ -139,7 +140,7 @@ const renderforsearch = (data) => {
   <img src='${data.hits[i].recipe.image}' class='card-img-top' alt='...'>
   <div class='card-body'>
     <h5 class='card-title'>${data.hits[i].recipe.label}</h5>
-    
+
   </div>
   </div>
   </div>
@@ -147,8 +148,8 @@ const renderforsearch = (data) => {
   <div class='card container-fluid p-5'>
   <h5>Ingredients</h5>
   ${data.hits[i].recipe.ingredientLines}
-  <a href='${data.hits[i].recipe.url}' target='_blank' class='btn btn-primary recipeLink'>Get Recipe!</a>
-  <div class = 'btn btn-primary addFavo recipeLink mt-4' id='fav${i}'>Add to Favourites</div>
+  <a href='${data.hits[i].recipe.url}' target='_blank' class='btn btn-success recipeLink'>Get Recipe!</a>
+  <div class = 'btn btn-success addFavo recipeLink mt-4' id='fav${i}'>Add to Favourites</div>
   </div>
   </div>
   </div>
@@ -182,4 +183,49 @@ let addFavourite = (data) => {
       searchedFoodItems.push(name);
     }
   });
-};
+}
+
+// POPUP section
+function showMealInfo(mealData){
+  // clean it up
+  mealInfoEl.innerHTML = "";
+
+  //  update the Meal Info
+  const mealEl =document.createElement('div')
+
+  const ingredients = [];
+
+  // get ingredients and measures
+  for(let i=0; i<20; i++) {
+  if (mealData['strIngredient'+i]) {
+    ingredients.push
+    (`${mealData["strIngredient" + i]}
+    - ${mealData["strMeasure" + i]}`);
+  } else {
+    break;
+  }
+  }
+
+  mealEl.innerHTML = `
+  <h1>${mealData.strMeal}</h1>
+  <img
+  src="${mealData.strMealThumb}"
+  alt="${mealData.strMeal}">
+  <p>${mealData.strInstructions}</p>
+  <h3>Ingredients:</h3>
+  <ul>
+      ${ingredients
+                .map(
+                    (ing) => `
+            <li>${ing}</li>
+            `
+                )
+                .join("")}
+        </ul>
+  `;
+
+  mealInfoEl.appendChild(mealEl);
+
+  // show the popup
+  mealPopup.classList.remove('hidden');
+}

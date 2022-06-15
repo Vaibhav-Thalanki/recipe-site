@@ -35,29 +35,18 @@ body#mainBody {
   color: white;
 }
 
-#subBtn {
-  color: white;
-  font-size: 1.1rem;
-  background-color: var(--color-primary-dark);
-}
-
 #searchForm {
   border-left: 1px solid var(--color-primary-dark);
 }
 
-#searchBtn {
-  color: white;
-  background-color: var(--color-primary-dark);
-  font-size: 1.1rem;
-}
 /* HEADER STYLING */
 
-#header {
+section#header {
   margin-top: 70px;
   background-color: var(--color-body);
 }
 
-#headerInner {
+.headerInner {
   display: grid;
   grid-template-columns: 3fr minmax(200px, 1fr);
   grid-gap: 3%;
@@ -82,14 +71,14 @@ I will find a better way, maybe by using JS. */
 } */
 
 /* -----------POPULAR lists ------------- */
-.sidebar-recipes {
+.sidebar-view {
   border: 1px solid var(--color-primary-m);
   margin-right: 0;
+  border-radius: 3px;
 }
 
-.sidebar-recipes h2 {
-  margin-top: 0;
-  color: var(--color-primary-dark);
+.sidebar-view .title-highlight {
+  border-radius: 0;
 }
 
 .sidebar-list a {
@@ -129,8 +118,8 @@ section#api {
   align-items: center;
 }
 
-button.recipeLink {
-  min-width: 30%;
+.recipeLink {
+  max-width: 33%;
   margin-top: 15px;
 }
 /* cards section */
@@ -269,12 +258,15 @@ footer i {
 /* ----- for VEGGY PAGE -------------- */
 .title-highlight {
   background-color: var(--color-primary-m);
+  color: white;
   display: block;
-  padding: 0.5rem 0 0.5rem;
+  padding: 0.5rem 1rem 0.5rem;
+  text-align: center;
+  border-radius: 3px;
 }
 
-.sidebarView {
-  width: 25%;
+.welcome {
+  background-color: var(--color-secondary);
 }
 
 .circle {
@@ -292,7 +284,7 @@ footer i {
 
 /* ----- for RESPONSIVENESS ------------ */
 @media screen and (max-width: 1048px) {
-  .sidebar-recipes h2 {
+  .sidebar-view h4 {
     font-size: 1.5rem;
   }
   .cards-container {
@@ -312,7 +304,7 @@ footer i {
   .footerContainer {
     flex-direction: column;
   }
-  #headerInner {
+  .headerInner {
     grid-template-columns: auto;
   }
   .sidebar-inner {
@@ -336,6 +328,6 @@ footer i {
     justify-content: center;
 }
   .indCards {
-    width: 20rem;
+    width: 18rem;
   }
 }

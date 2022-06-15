@@ -7,14 +7,17 @@
   <title>Yummy Recipes</title>
   <!-- CSS STYLING -->
   <link rel="stylesheet" href="public/styles.css">
+  <!-- Font Style -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
   <!-- FONTAWESOME -->
   <script src="https://kit.fontawesome.com/f82df14a80.js" crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body id="mainBody">
   <!-------------- NAV BAR -------------------->
+<header>
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top py-0" id="mainNavbar">
     <div class="container-fluid px-4">
       <button class="navbar-toggler m-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerMenu" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,32 +30,33 @@
             <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./index.html">Simple Recipes</a>
+            <a class="nav-link" href="./veggy.html">Simple Recipes</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./index.html">Veggy Meals</a>
+            <a class="nav-link" href="./veggy.html">Veggy Meals</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./index.html">Dinner</a>
+            <a class="nav-link" href="./veggy.html">Dinner</a>
           </li>
         </ul>
-        <button type="button" name="subscribe" class="btn mx-2" id="subBtn">
+        <button type="button" name="subscribe" class="btn mx-2 btn-success" id="subBtn">
           <i class="fa-solid fa-circle-user px-2"></i>Subscribe
         </button>
         <div class="d-flex p-2" id="searchForm">
           <input class="form-control me-2" type="search" placeholder="Search Dishes" aria-label="Search" id="searchvalue">
-          <button class="btn btn-sm py-1" type="" id="searchBtn">Search</button>
+          <button class="btn btn-success mx-2" type="" id="searchBtn">Search</button>
         </div>
       </div>
     </div>
   </nav>
+</header>
   <!-- END OF NAVBAR -->
   <!--------------------------- API section (Search all dishes)-------------------------->
   <section class="container-fluid mt-5 p-5" id="apiall">
     <div class="row" id="apisearchcards">
-      <section class="col-12  apitile">
-        <h2>Search Results</h2>
-      </section>
+      <!-- <section class="col-12  apitile">
+        <h2 class="title-highlight">Search Results</h2>
+      </section> -->
       <!-- dynamically rendered through javaScript -->
 
     </div>
@@ -70,150 +74,21 @@
     </div>
 
     <div id="apicards">
-    
+
       <!-- dynamically rendered through javaScript -->
     </div>
 
   </section>
-  <!--------------------------- Card section -------------------------->
-  <section class="container-fluid p-5" id="cards">
-    <div class="px-4">
-      <h2>Testimonials</h2>
-    </div>
-    <div class="cards-container mt-5 px-4">
-      <div class="indCards">
-        <!-- Front card -->
-        <div class="cardsList-front">
-          <h5><a href="#">Link to Recipe</a></h5>
-
-          <div class="card-msg py-2">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          </div>
-          <div class="d-flex align-items-end justify-content-end">
-            <div class="cardImg">
-              <img src="public/female.png" alt="">
-            </div>
-            <h5 class="px-2">Author</h5>
-          </div>
-        </div>
-        <!-- Back card -->
-        <div class="cardsList-back">
-          <div class="cardImg-back">
-          <img src="https://images.unsplash.com/photo-1565299507177-b0ac66763828" class="img-fluid" alt="">
-          </div>
-          <h5>Recipe Name</h5>
-          <span class="rating"></span>
-        </div>
-      </div>
-      <div class="indCards">
-        <!-- Front card -->
-        <div class="cardsList-front">
-          <h5><a href="#">Link to Recipe</a></h5>
-
-          <div class="card-msg py-2">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          </div>
-          <div class="d-flex align-items-end justify-content-end">
-            <div class="cardImg">
-              <img src="public/female.png" alt="">
-            </div>
-            <h5 class="px-2">Author</h5>
-          </div>
-        </div>
-        <!-- Back card -->
-        <div class="cardsList-back">
-          <div class="cardImg-back">
-          <img src="https://images.unsplash.com/photo-1565299507177-b0ac66763828" class="img-fluid" alt="">
-          </div>
-          <h5>Recipe Name</h5>
-          <span class="rating"></span>
-        </div>
-      </div>
-      <div class="indCards">
-        <!-- Front card -->
-        <div class="cardsList-front">
-          <h5><a href="#">Link to Recipe</a></h5>
-
-          <div class="card-msg py-2">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          </div>
-          <div class="d-flex align-items-end justify-content-end">
-            <div class="cardImg">
-              <img src="public/female.png" alt="">
-            </div>
-            <h5 class="px-2">Author</h5>
-          </div>
-        </div>
-        <!-- Back card -->
-        <div class="cardsList-back">
-          <div class="cardImg-back">
-          <img src="https://images.unsplash.com/photo-1565299507177-b0ac66763828" class="img-fluid" alt="">
-          </div>
-          <h5>Recipe Name</h5>
-          <span class="rating"></span>
-        </div>
-      </div>
-      <div class="indCards">
-        <!-- Front card -->
-        <div class="cardsList-front">
-          <h5><a href="#">Link to Recipe</a></h5>
-
-          <div class="card-msg py-2">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          </div>
-          <div class="d-flex align-items-end justify-content-end">
-            <div class="cardImg">
-              <img src="public/female.png" alt="">
-            </div>
-            <h5 class="px-2">Author</h5>
-          </div>
-        </div>
-        <!-- Back card -->
-        <div class="cardsList-back">
-          <div class="cardImg-back">
-            <img src="https://images.unsplash.com/photo-1565299507177-b0ac66763828" class="img-fluid" alt="">
-          </div>
-          <h5>Recipe Name</h5>
-          <span class="rating"></span>
-        </div>
-      </div>
-      <div class="indCards">
-        <!-- Front card -->
-        <div class="cardsList-front">
-          <h5><a href="#">Link to Recipe</a></h5>
-
-          <div class="card-msg py-2">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          </div>
-          <div class="d-flex align-items-end justify-content-end">
-            <div class="cardImg">
-              <img src="public/female.png" alt="">
-            </div>
-            <h5 class="px-2">Author</h5>
-          </div>
-        </div>
-        <!-- Back card -->
-        <div class="cardsList-back">
-          <div class="cardImg-back">
-          <img src="https://images.unsplash.com/photo-1565299507177-b0ac66763828" class="img-fluid"alt="">
-          </div>
-          <h5>Recipe Name</h5>
-          <span class="rating"></span>
-        </div>
+  <!--------------------------- Popup section -------------------------->
+  <div class="popup-container hidden" id="meal-popup">
+    <div class="popup" id="popup">
+      <button type="button" id="close-popup"><i class="fa fa-times"></i></button>
+      <div class="meal-info" id="meal-info">
+      <!-- data taken using JS -->
       </div>
     </div>
-    </div>
-    </div>
-    <div class="row">
+  </div>
 
-    </div>
-
-  </section>
   <!--------------------------- FOOTER -------------------------->
   <footer class="container-fluid text-center py-3">
     <div class="d-flex justify-content-center align-items-center footerContainer">
@@ -240,7 +115,7 @@
     </div>
   </footer>
   <!-- Bootstrap JS scripts-->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  <script src="https://cdn.jssdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="./script.js"></script>
 </body>
