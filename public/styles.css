@@ -227,6 +227,36 @@ footer i {
 }
 
 /* SEARCHPAGE for popup */
+#bg-header {
+  position: relative;
+}
+.bg-inner{
+  position: relative;
+  width: 100%;
+  height: 20rem;
+  background-image: url("background.jpg");
+  background-position: center;
+  background-size: cover;
+}
+.overlay {
+  position: absolute;
+  bottom: 0;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  width: 100%;
+  height: 100%;
+  transition: .5s ease;
+  opacity:1;
+}
+
+.text {
+    position: absolute;
+    color: #e4e2e2;
+    font-size: 5rem;
+    text-align: left;
+    top: 50%;
+}
+
 .popup-container {
   background-color: rgba(0,0,0, 0.5);
   display: flex;
@@ -237,9 +267,10 @@ footer i {
   right: 0;
   top: 0;
   bottom: 0;
+  z-index: 2;
 }
 
-.popup-container.hidden {
+.hidden {
   opacity: 0;
   pointer-events: none;
 }
@@ -255,6 +286,20 @@ footer i {
   max-height: 100vh;
 }
 
+.meal-info img {
+  margin: auto;
+}
+
+.popup #close-popup {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: transparent;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border: none;
+  color: #e9ccba;
+}
 /* ----- for VEGGY PAGE -------------- */
 .title-highlight {
   background-color: var(--color-primary-m);

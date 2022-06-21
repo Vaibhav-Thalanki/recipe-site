@@ -70,6 +70,8 @@ const sendAPIreq = async (food, start, val) => {
     // ----------------------------
     addFavourite(data);
   } else if (val == 2) {
+    showMealInfo(data);
+    console.log(val);
     localStorage.setItem("InitialSearchFoodJSON", JSON.stringify(data));
   }
 };
@@ -148,7 +150,7 @@ const renderforsearch = (data) => {
   <div class='card container-fluid p-5'>
   <h5>Ingredients</h5>
   ${data.hits[i].recipe.ingredientLines}
-  <a href='${data.hits[i].recipe.url}' target='_blank' class='btn btn-success recipeLink'>Get Recipe!</a>
+  <button class='btn btn-success recipeLink' id='pop${i}'>Get Recipe!</button>
   <div class = 'btn btn-success addFavo recipeLink mt-4' id='fav${i}'>Add to Favourites</div>
   </div>
   </div>
@@ -156,6 +158,7 @@ const renderforsearch = (data) => {
     `;
   }
   document.getElementById("apisearchcards").innerHTML = html;
+  getPopupId(data);
 };
 
 // ' add to favourites ' functionality
@@ -185,47 +188,85 @@ let addFavourite = (data) => {
   });
 }
 
+
+// for getting an ID to get exact data for Popup SECTION
+let getPopupId = (data) => {
+  //using event delegation to add event listeners to dynamically rendered contact
+  $(document).on("click", "button.recipeLink", function (e) {
+    let element = e.currentTarget;
+    let id = element.id;
+    console.log(element);
+    console.log(id);
+    let number = id.charAt(id.length - 1);
+    let name = data.hits[number].recipe.label;
+    let flag = 3;
+    if (flag == 3) {
+      sendAPIreq(name, start, 2);
+      if (start == true) start = false;
+    }
+  });
+}
+
 // POPUP section
-function showMealInfo(mealData){
+const mealInfoEl = document.getElementById('meal-info');
+const mealPopup = document.getElementById('meal-popup');
+const popupCloseBtn = document.getElementById('close-popup');
+const nav = document.getElementById('mainNavbar');
+let showMealInfo = (data) => {
   // clean it up
   mealInfoEl.innerHTML = "";
 
   //  update the Meal Info
   const mealEl =document.createElement('div')
-
+  const meal = data.hits[0].recipe;
   const ingredients = [];
 
   // get ingredients and measures
   for(let i=0; i<20; i++) {
-  if (mealData['strIngredient'+i]) {
+  if (meal.ingredientLines[i]) {
     ingredients.push
-    (`${mealData["strIngredient" + i]}
-    - ${mealData["strMeasure" + i]}`);
+    (`${meal.ingredientLines[i]}`)
   } else {
     break;
   }
   }
 
   mealEl.innerHTML = `
-  <h1>${mealData.strMeal}</h1>
+  <h1 class="text-center">${meal.label}</h1>
+  <div class="bg-secondary mb-2 d-flex justify-content-center">
   <img
-  src="${mealData.strMealThumb}"
-  alt="${mealData.strMeal}">
-  <p>${mealData.strInstructions}</p>
+  src="${meal.image}"
+  alt=""></div>
   <h3>Ingredients:</h3>
-  <ul>
-      ${ingredients
-                .map(
-                    (ing) => `
-            <li>${ing}</li>
-            `
-                )
-                .join("")}
-        </ul>
-  `;
+  <ul class="mb-2">
+  ${ingredients
+            .map(
+                (ing) => `
+        <li>${ing}</li>
+        `
+            )
+            .join("")}
+    </ul>
+  <h3>Instructions:</h3>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+   sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+   Ut enim ad minim veniam, quis nostrud exercitation ullamco
+   laboris nisi ut aliquip ex ea commodo consequat.
+   Duis aute irure dolor in reprehenderit in voluptate
+   velit esse cillum dolore eu fugiat nulla pariatur.
+   Excepteur sint occaecat cupidatat non proident, sunt in culpa
+   qui officia deserunt mollit anim id est laborum.</p>
+`;
 
   mealInfoEl.appendChild(mealEl);
 
   // show the popup
   mealPopup.classList.remove('hidden');
+  nav.classList.add('hidden');
+  console.log("popup button has been clicked")
 }
+
+popupCloseBtn.addEventListener("click", () => {
+  mealPopup.classList.add('hidden');
+  nav.classList.remove('hidden');
+} );
