@@ -1,378 +1,423 @@
  /* Reset */
-*,
-*::before,
-*::after {
-  margin:0;
-  padding: 0;
-  box-sizing: border-box;
-}
+ *,
+ *::before,
+ *::after {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+ }
 
-*:focus {
-    outline: 0 !important;
-}
+ *:focus {
+   outline: 0 !important;
+ }
 
-:root {
-  /* Colors */
+ :root {
+   /* Colors */
+   --color-primary: #4c956c;
+   --color-button-hover: #439065;
+   --color-primary-m: hsla(146, 32%, 44%, 0.7);
+   /* m for modified */
+   --color-primary-dark: #2c6e49;
 
---color-primary: #4c956c;
---color-button-hover: #439065;
---color-primary-m: hsla(146, 32%, 44%, 0.7); /* m for modified */
---color-primary-dark: #2c6e49;
---color-body: #fefee3;
---color-secondary: #dda15e;
---color-secondary-dark: #bc6c25;
---color-tertiary: #ffc9b9;
-}
+   --color-body: #fefee3;
+   --color-secondary: #dda15e;
+   --color-secondary-dark: #bc6c25;
+   --color-tertiary: #ffc9b9;
 
-body#mainBody {
-    background-color: var(--color-body);
-    font-family: 'Poppins', sans-serif;
-  }
+   --color-font: #3a403d;
+   --color-font-light:#515654;
+ }
 
-#mainNavbar {
-  background-color: var(--color-primary);
+ body#mainBody {
+   background-color: var(--color-body);
+   font-family: 'Poppins', sans-serif;
+ }
+
+ #mainNavbar {
+   background-color: var(--color-primary);
+   box-shadow: 0px 3px 5px 1px var(--color-primary-dark);
+   color: white;
+ }
+
+ #searchForm {
+   border-left: 1px solid var(--color-primary-dark);
+ }
+
+ /* HEADER STYLING */
+ section#header {
+   margin-top: 70px;
+   background-color: var(--color-body);
+ }
+
+ .headerInner {
+   display: grid;
+   grid-template-columns: 3fr minmax(200px, 1fr);
+   grid-gap: 3%;
+   background-color: var(--color-body);
+ }
+
+ /* to set padding for all sections */
+ .section-inner {
+   padding: 0 3rem;
+ }
+
+ /* -----------POPULAR lists ------------- */
+ .sidebar-view {
+   border: 1px solid var(--color-primary-m);
+   margin-right: 0;
+   border-radius: 3px;
+ }
+
+ .sidebar-view .title-highlight {
+   border-radius: 0;
+ }
+
+ .sidebar-list a {
+   text-decoration: none;
+   color: var(--color-primary-dark);
+ }
+
+ .sidebar-list h5 {
+   font-size: 1rem;
+ }
+
+ /* api section */
+ section#api {
+   background-color: var(--color-tertiary);
+ }
+
+ #foodsearch {
+   border: none;
+   border-radius: 10px;
+   margin-right: 10px;
+   size: 50;
+   padding: 5px;
+ }
+
+ .apitile {
+   margin-bottom: 10px;
+ }
+
+ #apisearchdiv {
+   text-align: center;
+ }
+
+ @media (max-width:768px) {
+   #apisearchdiv {
+     text-align: left;
+   }
+ }
+
+ .renderedIngredients {
+   display: flex;
+   align-items: center;
+ }
+
+ .recipeLink {
+   width: min-content;
+   margin-top: 15px;
+ }
+
+ /* cards section */
+ section#cards {
+   color: var(--color-primary-dark);
+ }
+
+ .cards-container {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, 14rem);
+   grid-gap: 1.2rem;
+   place-content: center;
+ }
+
+ .indCards {
+   width: 14rem;
+   height: 24rem;
+   position: relative;
+ }
+
+ .cardsList-front,
+ .cardsList-back {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   transition: all 2s ease-in-out;
+   backface-visibility: hidden;
+   display: grid;
+   justify-content: center;
+   align-items: start;
+   border-radius: 10px;
+ }
+
+ /* ------------- transition code for cards ----------------- */
+ /* 1 turn = 360deg and 0.5turn = 180deg */
+ .cardsList-back {
+   transform: perspective(100rem) rotateY(0.5turn);
+ }
+
+ .indCards:hover .cardsList-front {
+   transform: perspective(100rem) rotateY(0.5turn);
+ }
+
+ .indCards:hover .cardsList-back {
+   transform: perspective(100rem) rotateY(1turn);
+ }
+
+ /* --------end of transition ----------- */
+ .cardsList-front {
+   background-color: var(--color-secondary);
+   color: white;
+   padding: 1rem;
+ }
+
+ .cardsList-back {
+   background-color: var(--color-secondary-dark);
+   overflow: hidden;
+   color: white;
+ }
+
+ .cardImg {
+   width: 40px;
+   height: 40px;
+   border-radius: 50%;
+ }
+
+ .cardImg img {
+   max-width: 100%;
+   height: auto;
+   object-fit: cover;
+ }
+
+ .cardsList-front a {
+   text-decoration: none;
+   color: var(--color-body);
+ }
+
+ .cardsList-front a:hover {
+   color: white;
+   text-decoration: underline;
+ }
+
+ .card-msg {
+   font-size: 1rem;
+ }
+
+ .rating {
+   font-size: 0.8rem;
+   color: #f7d507;
+   /*yellow for the stars */
+ }
+
+ /*  FOOTER STYLING */
+ footer {
+   background-color: var(--color-primary);
+   color: white;
+   font-size: 0.7rem;
+   font-weight: 600;
+ }
+
+ footer i {
+   font-size: 1.4rem;
+ }
+
+ /* SEARCHPAGE for popup */
+ #bg-header {
+   position: relative;
+ }
+
+ .bg-inner {
+   position: relative;
+   width: 100%;
+   height: 20rem;
+   background-image: url("background.jpg");
+   background-position: center;
+   background-size: cover;
+ }
+
+ .overlay {
+   position: absolute;
+   bottom: 0;
+   background: rgb(0, 0, 0);
+   background: rgba(0, 0, 0, 0.5);
+   width: 100%;
+   height: 100%;
+   transition: .5s ease;
+   opacity: 1;
+ }
+
+ .text {
+   position: absolute;
+   color: #e4e2e2;
+   font-size: 5rem;
+   text-align: left;
+   top: 50%;
+ }
+
+ .popup-container {
+   background-color: rgba(0, 0, 0, 0.5);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   position: fixed;
+   left: 0;
+   right: 0;
+   top: 0;
+   bottom: 0;
+   z-index: 2;
+ }
+
+ .hidden {
+   opacity: 0;
+   pointer-events: none;
+ }
+
+ .popup {
+   background-color: white;
+   max-width: 600px;
+   width: 100%;
+   border-radius: 5px;
+   padding: 2rem 2rem;
+   position: relative;
+   overflow: auto;
+   max-height: 100vh;
+ }
+
+ .meal-info img {
+   margin: auto;
+ }
+
+ .popup #close-popup {
+   position: absolute;
+   top: 0;
+   right: 0;
+   background-color: transparent;
+   font-size: 1.5rem;
+   cursor: pointer;
+   border: none;
+   color: #e9ccba;
+ }
+
+ /* ----- for VEGGY PAGE -------------- */
+ .title-highlight {
+   background-color: var(--color-primary-m);
+   color: white;
+   display: block;
+   padding: 0.5rem 1rem 0.5rem;
+   text-align: center;
+   border-radius: 3px;
+ }
+
+ .welcome {
+   background-color: var(--color-secondary);
+ }
+
+ .circle {
+   width: 80%;
+   height: auto;
+   border-radius: 50%;
+   background-color: var(--color-body);
+   border: 1px solid var(--color-secondary);
+   overflow: hidden;
+ }
+
+ .subscribe {
+   background-color: var(--color-tertiary);
+ }
+
+ /* ------- NEW page ----------- */
+ .login-background {
+   max-width: 100%;
+   height: 90vh;
+   background: #C6FFDD;
+   background: rgb(198,255,221);
+background: linear-gradient(193deg, rgba(198,255,221,1) 0%, rgba(251,215,134,1) 100%);
+ }
+
+ .act-container {
+   width: 30%;
+   min-width: 350px;
+   background-color: var(--color-primary-dark);
+  color: #c6ffdd;
   box-shadow: 0px 3px 5px 1px var(--color-primary-dark);
-  color: white;
-}
-
-#searchForm {
-  border-left: 1px solid var(--color-primary-dark);
-}
-
-/* HEADER STYLING */
-
-section#header {
-  margin-top: 70px;
-  background-color: var(--color-body);
-}
-
-.headerInner {
-  display: grid;
-  grid-template-columns: 3fr minmax(200px, 1fr);
-  grid-gap: 3%;
-  background-color: var(--color-body);
-}
-
-/* to set padding for all sections */
-.section-inner {
-    padding: 0 3rem;
-}
-/*  The carousel items should be edited so it wouldnt be redundant. In the future,
-I will find a better way, maybe by using JS. */
-
-/* ----- Carousel items 1 -----------------*/
-/* #bbq {
-  background: var(--color-body);
-  background: linear-gradient(0deg, var(--color-body) 0%, rgba(255,255,255,0.2) 20%,
-  rgba(255,255,255,0) 30%), url('https://images.unsplash.com/photo-1561626423-a51b45aef0a1');
-  width: 100%;
-  height: 90vh;
-  background-size: cover;
-} */
-
-/* -----------POPULAR lists ------------- */
-.sidebar-view {
-  border: 1px solid var(--color-primary-m);
-  margin-right: 0;
-  border-radius: 3px;
-}
-
-.sidebar-view .title-highlight {
-  border-radius: 0;
-}
-
-.sidebar-list a {
-  text-decoration: none;
-  color: var(--color-primary-dark);
-}
-
-.sidebar-list h5 {
-  font-size: 1rem;
-}
-
-/* api section */
-section#api {
-  background-color: var(--color-tertiary);
-
-}
-#foodsearch{
-  border: none;
   border-radius: 10px;
-  margin-right: 10px;
-  size: 50;
-  padding: 5px;
-}
-.apitile{
-  margin-bottom: 10px;
-}
-#apisearchdiv{
-  text-align: center;
-}
-@media (max-width:768px) {
-  #apisearchdiv{
-    text-align: left;
-  }
-}
-.renderedIngredients{
-  display: flex;
-  align-items: center;
-}
+  padding: 2rem 3rem;
+ }
 
-.recipeLink {
-  width: min-content;
-  margin-top: 15px;
-}
-/* cards section */
-section#cards {
-  color: var(--color-primary-dark);
-}
 
-.cards-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, 14rem);
-  grid-gap: 1.2rem;
-  place-content: center;
-}
+ .form-container input {
+   border-radius: 3px;
+   padding: 0.3rem 1rem;
+   font-size: 0.9rem;
+   color: var(--color-font-light);
+ }
 
-.indCards {
-width: 14rem;
-height: 24rem;
-position: relative;
-}
+ .form-container button{
+   width: 47%;
+   color: var(--color-font);
+ }
 
-.cardsList-front,
-.cardsList-back {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  transition: all 2s ease-in-out;
-  backface-visibility: hidden;
-  /* transform: perspective(100rem); */
-  display: grid;
-  justify-content: center;
-  align-items: start;
-  border-radius: 10px;
-}
+ button#cancel-btn {
+   background: linear-gradient(193deg, rgba(198,255,221,1) 0%, rgba(251,215,134,1) 100%);
+ }
 
-/* ------------- transition code for cards ----------------- */
-/* 1 turn = 360deg and 0.5turn = 180deg */
-.cardsList-back {
-  transform: perspective(100rem) rotateY(0.5turn);
-}
+ button#reg-btn {
+   background-color: #c6ffdd;
+ }
+ /* ----- for RESPONSIVENESS ------------ */
+ @media screen and (max-width: 1048px) {
+   .sidebar-view h4 {
+     font-size: 1.5rem;
+   }
 
-.indCards:hover .cardsList-front {
-  transform: perspective(100rem) rotateY(0.5turn);
-}
+   .cards-container {
+     grid-template-columns: repeat(2, 1fr);
+     grid-template-rows: auto;
+   }
 
-.indCards:hover .cardsList-back {
-  transform: perspective(100rem) rotateY(1turn);
-}
-/* --------end of transition ----------- */
+   .indCards {
+     justify-self: center;
+   }
 
-.cardsList-front {
-  background-color: var(--color-secondary);
-  color: white;
-  padding: 1rem;
-}
+   #subBtn {
+     display: none;
+   }
+ }
 
-.cardsList-back {
-  background-color: var(--color-secondary-dark);
-  overflow: hidden;
-  color: white;
-}
+ @media screen and (max-width: 960px) {
+   .footerContainer {
+     flex-direction: column;
+   }
 
-.cardImg {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-}
+   .headerInner {
+     grid-template-columns: auto;
+   }
 
-.cardImg img {
-  max-width: 100%;
-  height: auto;
-  object-fit: cover;
-}
+   .sidebar-inner {
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     gap: 3px;
+   }
 
-.cardsList-front a {
-  text-decoration: none;
-  color: var(--color-body);
-}
+   .section-inner {
+     padding: 0;
+   }
+ }
 
-.cardsList-front a:hover {
-  color: white;
-  text-decoration: underline;
-}
+ @media screen and (max-width: 576px) {
+   .sidebar-inner {
+     display: flex;
+     flex-direction: column;
+   }
 
-.card-msg {
-  font-size: 1rem;
-}
+   .cards-container {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+   }
 
-.rating {
-  font-size: 0.8rem;
-  color: #f7d507; /*yellow for the stars */
-}
-
-/*  FOOTER STYLING */
-footer {
-  background-color: var(--color-primary);
-  color: white;
-  font-size: 0.7rem;
-  font-weight: 600;
-}
-
-footer i {
-  font-size: 1.4rem;
-}
-
-/* SEARCHPAGE for popup */
-#bg-header {
-  position: relative;
-}
-.bg-inner{
-  position: relative;
-  width: 100%;
-  height: 20rem;
-  background-image: url("background.jpg");
-  background-position: center;
-  background-size: cover;
-}
-.overlay {
-  position: absolute;
-  bottom: 0;
-  background: rgb(0, 0, 0);
-  background: rgba(0, 0, 0, 0.5); /* Black see-through */
-  width: 100%;
-  height: 100%;
-  transition: .5s ease;
-  opacity:1;
-}
-
-.text {
-    position: absolute;
-    color: #e4e2e2;
-    font-size: 5rem;
-    text-align: left;
-    top: 50%;
-}
-
-.popup-container {
-  background-color: rgba(0,0,0, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  z-index: 2;
-}
-
-.hidden {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.popup {
-  background-color: white;
-  max-width: 600px;
-  width: 100%;
-  border-radius: 5px;
-  padding: 2rem 2rem;
-  position: relative;
-  overflow: auto;
-  max-height: 100vh;
-}
-
-.meal-info img {
-  margin: auto;
-}
-
-.popup #close-popup {
-  position: absolute;
-  top: 0;
-  right: 0;
-  background-color: transparent;
-  font-size: 1.5rem;
-  cursor: pointer;
-  border: none;
-  color: #e9ccba;
-}
-/* ----- for VEGGY PAGE -------------- */
-.title-highlight {
-  background-color: var(--color-primary-m);
-  color: white;
-  display: block;
-  padding: 0.5rem 1rem 0.5rem;
-  text-align: center;
-  border-radius: 3px;
-}
-
-.welcome {
-  background-color: var(--color-secondary);
-}
-
-.circle {
-  width: 80%;
-  height: auto;
-  border-radius: 50%;
-  background-color: var(--color-body);
-    border: 1px solid var(--color-secondary);
-    overflow: hidden;
-}
-
-.subscribe {
-  background-color: var(--color-tertiary);
-}
-
-/* ----- for RESPONSIVENESS ------------ */
-@media screen and (max-width: 1048px) {
-  .sidebar-view h4 {
-    font-size: 1.5rem;
-  }
-  .cards-container {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto;
-  }
-
-  .indCards {
-    justify-self: center;
-  }
-  #subBtn {
-    display: none;
-  }
-}
-
-@media screen and (max-width: 960px) {
-  .footerContainer {
-    flex-direction: column;
-  }
-  .headerInner {
-    grid-template-columns: auto;
-  }
-  .sidebar-inner {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 3px;
-    }
-  .section-inner {
-    padding: 0;
-  }
-}
-
-@media screen and (max-width: 576px) {
-  .sidebar-inner {
-      display: flex;
-      flex-direction: column;
-  }
-  .cards-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-  .indCards {
-    width: 18rem;
-  }
-}
+   .indCards {
+     width: 18rem;
+   }
+ }

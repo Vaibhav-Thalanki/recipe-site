@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Yummy Recipes</title>
+  <!-- CSS STYLING -->
+  <link rel="stylesheet" href="public/styles.css">
+  <!-- Font Style -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <!-- FONTAWESOME -->
+  <script src="https://kit.fontawesome.com/f82df14a80.js" crossorigin="anonymous"></script>
+</head>
+
+<body id="mainBody">
+  <!-------------- NAV BAR -------------------->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top py-0" id="mainNavbar">
+      <div class="container-fluid px-4">
+        <button class="navbar-toggler m-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerMenu" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="./index.html">Yummy Recipes</a>
+        <div class="collapse navbar-collapse" id="navbarTogglerMenu">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./veggy.html">Simple Recipes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./veggy.html" id="veggy">Veggy Meals</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./veggy.html">Dinner</a>
+            </li>
+          </ul>
+          <button type="button" name="subscribe" class="btn mx-2 btn-success" id="subBtn">
+            <i class="fa-solid fa-circle-user px-2"></i>Subscribe
+          </button>
+          <div class="d-flex p-2" id="searchForm">
+            <input class="form-control me-2" type="search" placeholder="Search Dishes" aria-label="Search" id="searchvalue">
+            <a href="javascript:getsearch(1);"><button class="btn btn-success mx-2" type="" id="searchBtn">Search</button></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <!-- END OF NAVBAR -->
