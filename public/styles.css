@@ -15,22 +15,25 @@
    /* Colors */
    --color-primary: #4c956c;
    --color-button-hover: #439065;
-   --color-primary-m: hsla(146, 32%, 44%, 0.7);
-   /* m for modified */
-   --color-primary-dark: #2c6e49;
+   --color-primary-m: hsla(146, 32%, 44%, 0.7); /* m for modified */
 
+   --color-primary-dark: #2c6e49;
    --color-body: #fefee3;
    --color-secondary: #dda15e;
    --color-secondary-dark: #bc6c25;
    --color-tertiary: #ffc9b9;
 
    --color-font: #3a403d;
-   --color-font-light:#515654;
+   --color-font-light: #515654;
  }
 
  body#mainBody {
    background-color: var(--color-body);
    font-family: 'Poppins', sans-serif;
+   transition: all .5s ease-in-out;
+   -o-transition: all .5s ease-in-out;
+   -moz-transition: all .5s ease-in-out;
+   -webkit-transition: all .5s ease-in-out;
  }
 
  #mainNavbar {
@@ -62,6 +65,15 @@
  }
 
  /* -----------POPULAR lists ------------- */
+ .title-highlight {
+   background-color: var(--color-primary-m);
+   color: white;
+   display: block;
+   padding: 0.5rem 1rem 0.5rem;
+   text-align: center;
+   border-radius: 3px;
+ }
+
  .sidebar-view {
    border: 1px solid var(--color-primary-m);
    margin-right: 0;
@@ -100,12 +112,6 @@
 
  #apisearchdiv {
    text-align: center;
- }
-
- @media (max-width:768px) {
-   #apisearchdiv {
-     text-align: left;
-   }
  }
 
  .renderedIngredients {
@@ -222,7 +228,7 @@
    font-size: 1.4rem;
  }
 
- /* SEARCHPAGE for popup */
+ /* background header for regular pages */
  #bg-header {
    position: relative;
  }
@@ -253,8 +259,10 @@
    font-size: 5rem;
    text-align: left;
    top: 50%;
+   transition: all 0.5s ease-in-out;
  }
 
+/* popup feature in the SEARCH page */
  .popup-container {
    background-color: rgba(0, 0, 0, 0.5);
    display: flex;
@@ -300,16 +308,12 @@
  }
 
  /* ----- for VEGGY PAGE -------------- */
- .title-highlight {
-   background-color: var(--color-primary-m);
-   color: white;
-   display: block;
-   padding: 0.5rem 1rem 0.5rem;
-   text-align: center;
-   border-radius: 3px;
- }
 
- .welcome {
+.card-width{
+  width: 18rem;
+}
+
+ .brown {
    background-color: var(--color-secondary);
  }
 
@@ -322,7 +326,7 @@
    overflow: hidden;
  }
 
- .subscribe {
+ .pink {
    background-color: var(--color-tertiary);
  }
 
@@ -331,20 +335,19 @@
    max-width: 100%;
    height: 90vh;
    background: #C6FFDD;
-   background: rgb(198,255,221);
-background: linear-gradient(193deg, rgba(198,255,221,1) 0%, rgba(251,215,134,1) 100%);
+   background: rgb(198, 255, 221);
+   background: linear-gradient(193deg, rgba(198, 255, 221, 1) 0%, rgba(251, 215, 134, 1) 100%);
  }
 
  .act-container {
    width: 30%;
    min-width: 350px;
    background-color: var(--color-primary-dark);
-  color: #c6ffdd;
-  box-shadow: 0px 3px 5px 1px var(--color-primary-dark);
-  border-radius: 10px;
-  padding: 2rem 3rem;
+   color: #c6ffdd;
+   box-shadow: 0px 3px 5px 1px var(--color-primary-dark);
+   border-radius: 10px;
+   padding: 2rem 3rem;
  }
-
 
  .form-container input {
    border-radius: 3px;
@@ -353,19 +356,31 @@ background: linear-gradient(193deg, rgba(198,255,221,1) 0%, rgba(251,215,134,1) 
    color: var(--color-font-light);
  }
 
- .form-container button{
+ .form-container button {
    width: 47%;
    color: var(--color-font);
  }
 
  button#cancel-btn {
-   background: linear-gradient(193deg, rgba(198,255,221,1) 0%, rgba(251,215,134,1) 100%);
+   background: linear-gradient(193deg, rgba(198, 255, 221, 1) 0%, rgba(251, 215, 134, 1) 100%);
  }
 
  button#reg-btn {
    background-color: #c6ffdd;
  }
+
  /* ----- for RESPONSIVENESS ------------ */
+
+@media screen and (max-width: 1140px) {
+   .bg-inner{
+   height: 18rem;
+ }
+
+   .text{
+   font-size: 4rem;
+ }
+}
+
  @media screen and (max-width: 1048px) {
    .sidebar-view h4 {
      font-size: 1.5rem;
@@ -383,6 +398,10 @@ background: linear-gradient(193deg, rgba(198,255,221,1) 0%, rgba(251,215,134,1) 
    #subBtn {
      display: none;
    }
+
+   .text{
+   font-size: 3.5rem;
+ }
  }
 
  @media screen and (max-width: 960px) {
@@ -403,6 +422,28 @@ background: linear-gradient(193deg, rgba(198,255,221,1) 0%, rgba(251,215,134,1) 
    .section-inner {
      padding: 0;
    }
+
+   .bg-inner{
+     height: 16rem;
+   }
+
+   .text{
+     font-size: 3rem;
+   }
+ }
+
+ @media screen and (max-width:768px) {
+   #apisearchdiv {
+     text-align: left;
+   }
+
+   .text{
+   font-size: 2.5rem;
+ }
+
+   .sidebar-inner {
+     display: none;
+   }
  }
 
  @media screen and (max-width: 576px) {
@@ -419,5 +460,31 @@ background: linear-gradient(193deg, rgba(198,255,221,1) 0%, rgba(251,215,134,1) 
 
    .indCards {
      width: 18rem;
+   }
+
+  .card-width {
+    width: 16rem;
+  }
+
+   .bg-inner{
+     height: 10rem;
+   }
+
+   .text{
+     font-size: 1.8rem;
+   }
+ }
+
+ @media screen and (max-width: 350px) {
+  .indCards {
+    width: 14rem;
+  }
+
+   .card-width {
+     width: 14rem;
+   }
+
+   .ad-sidebar {
+     display: none;
    }
  }

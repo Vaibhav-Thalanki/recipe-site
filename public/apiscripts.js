@@ -21,7 +21,7 @@ function addMeal(mealData, random= false){
   meal.classList.add('meal');
 
   meal.innerHTML =`
-  <div class="card mb-3" style="width: 18rem;">
+  <div class="card mb-3 card-width">
   <img src="${mealData.recipe.image}" class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title">${mealData.recipe.label}</h5>
