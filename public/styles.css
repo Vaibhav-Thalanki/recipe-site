@@ -292,6 +292,10 @@
    max-height: 100vh;
  }
 
+.meal {
+  margin-bottom: 10px;
+}
+
  .meal-info img {
    margin: auto;
  }
@@ -441,12 +445,23 @@
    font-size: 2.5rem;
  }
 
+   .sidebar-view {
+     display: none;
+   }
+
    .sidebar-inner {
      display: none;
    }
  }
 
  @media screen and (max-width: 576px) {
+   .headerInner{
+     gap: 1%;
+   }
+  .sidebar-view {
+    display: block;
+  }
+
    .sidebar-inner {
      display: flex;
      flex-direction: column;
@@ -471,7 +486,8 @@
    }
 
    .text{
-     font-size: 1.8rem;
+     top: 40%;
+     font-size: 2rem;
    }
  }
 
