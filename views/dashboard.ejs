@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Fellow Foodies in our Community</h1>
+
+    <ul>
+      <% for (let user of users) { %>
+      <li><a href="/farms/<%= user._id %>"><%= user.name %></a></li>
+        <% } %>
+    </ul>
+
+
+  </body>
+</html>

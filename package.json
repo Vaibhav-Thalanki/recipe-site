@@ -1,0 +1,27 @@
+{
+  "name": "recipe-site",
+  "version": "1.0.0",
+  "description": "practice making fully functional recipe site",
+  "main": "\u001b[D\u001b[D\u001b[Dapp\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vaibhav-Thalanki/recipe-site.git"
+  },
+  "keywords": [
+    "recipes"
+  ],
+  "author": "vaibhav & puffyfish",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vaibhav-Thalanki/recipe-site/issues"
+  },
+  "homepage": "https://github.com/Vaibhav-Thalanki/recipe-site",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "mongoose": "^6.4.1"
+  }
+}
